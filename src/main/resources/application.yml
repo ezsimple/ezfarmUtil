@@ -1,3 +1,20 @@
+# Logging LEVEL Setting
+logging:
+  level:
+    ezfarm: DEBUG
+    org.springframework:
+      web: WARN
+      security: WARN
+      messaging: WARN
+
+    jdbc: WARN
+    resultset: WARN
+
+server:
+  port: 8100
+
+Globals.DbType: h2
+
 spring:
   h2:
     console:
@@ -16,5 +33,6 @@ spring:
 #      connection-init-sql: data.sql
       
 mybatis:
+  config-location: classpath*:config/mybatis-config.xml
   mapper-locations: classpath*:mapper/**/*Mapper.xml
       
