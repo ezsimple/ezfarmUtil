@@ -7,13 +7,13 @@ spring:
   datasource:
     hikari:
       driver-class-name: org.h2.Driver
-      jdbc-url: jdbc:h2:~/data/ezfarmdb # ./ Project root
+      jdbc-url: jdbc:h2:~/data/ezfarmdb # Project root (상대경로를 추첨, 절대경로는 Exception)
       username: sa
-      password:
+      password: 
       connectionTimeout: 30000
       idleTimeout: 600000
       maxLifetime: 1800000
-#      connection-init-sql: data.sql
+    data: classpath*:data.sql # 쉼표로 여려개 구분할 수 있음. ex) classpath:data1.sql, classpath:data2.sq
       
 mybatis:
   mapper-locations: classpath*:mapper/**/*Mapper.xml
